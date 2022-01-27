@@ -154,9 +154,14 @@ function addUserToList(emailBody, callback) {
 		// Confirm email type is opt in and link has been clicked within 1 day
 		if (emailType == optIn && timeElapsed < secondsInDay) {
 			var request = sg.emptyRequest({
-				method: 'POST',
-				path: '/v3/contactdb/recipients',
-				body: customFields
+				//method: 'POST',
+				//path: '/v3/contactdb/recipients',
+				//body: customFields
+				 method: 'PUT',
+				  url: '/v3/marketing/contacts',
+				  body: {
+				    contacts: [{ email: 'idengrenme@me.com', first_name: 'MichaelME', last_name: 'IdengrenME' }],
+				  }
 			});
 
 			sg.API(request, function(error, response) {
