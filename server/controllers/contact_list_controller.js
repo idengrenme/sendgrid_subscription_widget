@@ -161,7 +161,7 @@ function addUserToList(emailBody, callback) {
 				  url: '/v3/marketing/contacts',
 				  body: {
 				    contacts: [{ email: 'idengrenme@me.com', first_name: 'MichaelME', last_name: 'IdengrenME' }],
-				  }
+				  } 
 			});
 
 			sg.API(request, function(error, response) {
